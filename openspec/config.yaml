@@ -1,0 +1,21 @@
+# Configuración de OpenSpec (Spec-Driven Development)
+schema: spec-driven
+
+context: |
+  Proyecto: Dashboard de Finanzas Personales (Ingeniería Web, equipo G0203).
+  Stack: MERN — MongoDB Atlas + Mongoose, Express 5, React 19 (Vite), Node.js 20+.
+  Librerías: Chart.js, Day.js, SweetAlert2, React-Toastify, SheetJS, jsPDF, Validator.js, UUID,
+  JWT (jsonwebtoken + express-jwt), Nodemailer, bcryptjs.
+  Arquitectura backend por capas: Controller -> Service -> Repository.
+  - Políticas de autorización RBAC centralizadas en src/services/policies.js.
+  - Aislamiento multiinquilino: todo repositorio exige userId y lo fuerza en cada consulta.
+  - Validación de entradas con validator.js en src/validators/.
+  Principios: SOLID (inyección de dependencias en src/container.js), Clean Code, KISS, DRY, YAGNI.
+  Idioma de la interfaz y de los mensajes: español (Perú). Moneda: soles (S/).
+
+rules:
+  specs:
+    - Cada requisito proviene de una historia de usuario HU-FIN-XX de la plantilla oficial.
+    - Cada requisito tiene 4 escenarios Gherkin: camino feliz, flujo alternativo, manejo de errores y caso de borde.
+  tasks:
+    - Toda tarea de backend incluye su prueba automática nombrada con el ID de la HU y del escenario.
